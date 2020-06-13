@@ -65,6 +65,11 @@ class Atom:
     def val(self, value) -> None:
         self._val = value
 
+    def __repr__(self) -> str:
+        return f"Atom(val={self._val!r})"
+        
+    def __str__(self) -> str:
+        return f"Atom({self._val})"
 
 class HashMap(dict):
     pass
