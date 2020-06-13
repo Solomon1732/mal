@@ -5,7 +5,6 @@ import sys
 
 import core
 import env
-from env import Env
 import exceptions
 import mal_types
 import printer
