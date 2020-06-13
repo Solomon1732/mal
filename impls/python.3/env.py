@@ -2,7 +2,6 @@
 import exceptions
 import mal_types
 
-_NIL = mal_types.Symbol("nil")
 _VARARGS = mal_types.Symbol("&")
 
 class Env:
