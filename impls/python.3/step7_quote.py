@@ -84,7 +84,7 @@ def EVAL(ast, environ: env.Env):
             if args_list_len % 2 != 0:
                 raise exceptions.MalSyntaxError("Syntax Error: uneven number of list arguments")
             for i in range(0, args_list_len, 2):
-                let_env.set(args_list[i], EVAL(args_list[i+1], environ))
+                let_env.set(args_list[i], EVAL(args_list[i+1], let_env))
             ast = ast[2]
             environ = let_env
         elif first_elem == _DO:
