@@ -89,8 +89,6 @@ def _function(ast, environ, params):
 
 def EVAL(ast, environ: env.Env):
     while True:
-#        breakpoint()
-#        print(ast)
         if not isinstance(ast, mal_types.List):
             return eval_ast(ast, environ)
 
