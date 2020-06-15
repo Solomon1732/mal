@@ -68,7 +68,7 @@ def read_atom(reader: Reader):
         token = mal_types.Keyword(token[1:])
     elif token.startswith('"'):
         if len(token) < 2 or not _is_parens_balanced(token):
-            raise exceptions.UnballancedQuotesError()
+            raise exceptions.UnballancedQuotesError("quotes unbalanced")
         token = _unescape(token[1:-1])
     else:
         token = mal_types.Symbol(name=token)
@@ -82,7 +82,7 @@ def _read(end_token, reader: Reader):
         try:
             token = read_form(reader)
         except IndexError as e:
-            raise exceptions.UnballancedParensError()
+            raise exceptions.UnballancedParensError("parentheses/brackets unbalanced")
 
 _END_LIST = mal_types.Symbol(name=")")
 
