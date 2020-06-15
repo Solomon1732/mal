@@ -20,9 +20,7 @@ def _isempty(lst: mal_types.List) -> bool:
     return lst is None or len(lst) == 0
 
 def _pr_str(*args) -> str:
-    s = " ".join(printer.pr_str(arg, True) for arg in args)
-    print(s)
-    return s
+    return " ".join(printer.pr_str(arg, True) for arg in args)
 
 def _str(*args) -> str:
     return "".join(printer.pr_str(arg, False) for arg in args)
